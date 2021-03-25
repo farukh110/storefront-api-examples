@@ -15,8 +15,26 @@ class Products extends Component {
     });
 
     return (
+      <div className="container mt-md-5 mb-md-5">
       <div className="Product-wrapper">
+      <table className="table table-bordered">
+        <tr>
+          <th>
+            Product image
+          </th>
+          <th>
+            Product Name
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
         {products}
+        </table>
+      </div>
       </div>
     );
   }

@@ -11,7 +11,7 @@ class VariantSelector extends Component {
       >
         {this.props.option.values.map((value) => {
           return (
-            <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
+            <option value={value} key={`${this.props.option.name} - ${value}`}>{` ${value} `}</option>
           )
         })}
       </select>

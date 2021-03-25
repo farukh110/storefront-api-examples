@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Client from 'graphql-js-client';
 import typeBundle from './types';
-import '../../shared/app.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 export const client = new Client(typeBundle, {
   url: 'https://graphql.myshopify.com/api/graphql',

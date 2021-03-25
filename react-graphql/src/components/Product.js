@@ -56,7 +56,7 @@ class Product extends Component {
   render() {
     let variantImage = this.state.selectedVariantImage || this.props.product.images[0].src
     let variant = this.state.selectedVariant || this.props.product.variants[0]
-    let variantQuantity = this.state.selectedVariantQuantity || 1
+    // let variantQuantity = this.state.selectedVariantQuantity || 1
     let variantSelectors = this.props.product.options.map((option) => {
       return (
         <VariantSelector
@@ -67,17 +67,29 @@ class Product extends Component {
       );
     });
     return (
-      <div className="Product">
-        {this.props.product.images.length ? <img src={variantImage} alt={`${this.props.product.title} product shot`}/> : null}
+       
+       <tr>
+        <td>
+        {this.props.product.images.length ? 
+        <img className="img-fluid" width="200" height="200" src={variantImage} alt={`${this.props.product.title} product shot`}/> : null}
+        </td>
+
+        <td>
         <h5 className="Product__title">{this.props.product.title}</h5>
+        </td>
+
+        <td>  
+
         <span className="Product__price">${variant.price}</span>
+        
+        </td>
+
+        <td>
         {variantSelectors}
-        <label className="Product__option">
-          Quantity
-          <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input>
-        </label>
-        <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Cart</button>
-      </div>
+        </td>
+
+        </tr>
+
     );
   }
 }
